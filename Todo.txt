@@ -1,0 +1,2 @@
+Todo :
+- Sur le serveur, il faut trouver un moyen de stoker les personnes qui ont demandé de l'aide afin que quand quelqu'un accepte de les aider, on puisse leur envoyer la notification.
