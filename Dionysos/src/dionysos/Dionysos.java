@@ -49,7 +49,7 @@ public class Dionysos {
         }
 
         String PortBase = propfile.getProperty("port_base", "50001");
-        String PortHelp = propfile.getProperty("port_help", "50001");
+        String PortHelp = propfile.getProperty("port_help", "50002");
 
 
 
