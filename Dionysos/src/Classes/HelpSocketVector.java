@@ -70,6 +70,7 @@ public class HelpSocketVector
                 }
                 someoneisnear = true;
             }
+            cpt++;
         }
         
         if (someoneisnear==true)

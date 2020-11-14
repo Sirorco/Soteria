@@ -146,7 +146,16 @@ public class Thread_Mercure extends Thread
                         oos.flush();
                         break;
 
-                         
+                    case base_request.I_NEED_HELP:
+                        System.out.println("I_NEED_HELP");
+                        
+                        help_request requesthelp = (help_request) request;
+                        boolean status = Helps.LookForHelp(requesthelp.getId_person_to_help(), requesthelp.getPosition());
+                        requesthelp.setStatus(status);
+                        oos.writeObject(requesthelp);
+                        oos.flush();
+                        break;
+                        
                     case base_request.LOGOUT :
                         System.out.println("LOGOUT");
                         request.setStatus(true);

@@ -24,20 +24,20 @@ public class HelpSocket
     
     public HelpSocket ()
     {
-        Socket client=null;
-        ObjectInputStream ois=null;
-        ObjectOutputStream oos =null;
-        int ID = 0; //The ID of the client
-        int position = 0; //The position of the client IRL. For now it will be an integer.
+        this.client=null;
+        this.ois=null;
+        this.oos =null;
+        this.ID = 0; //The ID of the client
+        this.position = 0; //The position of the client IRL. For now it will be an integer.
     }
     
     public HelpSocket (Socket clientp, ObjectInputStream oisp, ObjectOutputStream oosp, int IDp, int positionp)
     {
-        Socket client=clientp;
-        ObjectInputStream ois=oisp;
-        ObjectOutputStream oos =oosp;
-        int ID = IDp; //The ID of the client
-        int position = positionp; //The position of the client IRL. For now it will be an integer.
+        this.client=clientp;
+        this.ois=oisp;
+        this.oos =oosp;
+        this.ID = IDp; //The ID of the client
+        this.position = positionp; //The position of the client IRL. For now it will be an integer.
     }
 
     /**
