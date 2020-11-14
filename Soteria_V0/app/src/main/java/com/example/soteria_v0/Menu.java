@@ -6,6 +6,8 @@ import androidx.core.app.NotificationManagerCompat;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -137,6 +139,10 @@ public class Menu extends AppCompatActivity {
                     builder.setTimeoutAfter(90000); //la notification se retire après 1m30
 
                     //PendingIntent pour mettre des boutons ?
+                    Intent okIntent = new Intent(Menu.this,MapActivity.class);
+                    okIntent.putExtra("person_position",request.getPosition());
+                    PendingIntent okPendingIntent = PendingIntent.getActivity(Menu.this,1,okIntent,0);
+                    builder.addAction(R.drawable.ic_launcher_background,"Im going",okPendingIntent);
 
                     NotificationManagerCompat notificationManager = NotificationManagerCompat.from(Menu.this);
                     notificationManager.notify(1, builder.build());
