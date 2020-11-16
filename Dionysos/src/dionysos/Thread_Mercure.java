@@ -8,6 +8,7 @@ package dionysos;
 import Classes.HelpSocket;
 import Classes.HelpSocketVector;
 import Protocol.*;
+import static Protocol.base_request.HELP_IS_COMMING;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,6 +50,7 @@ public class Thread_Mercure extends Thread
 {
     private Socket Client;
     private HelpSocketVector Helps;
+    static ObjectOutputStream Helplessoos = null;   //Not thread safe at all !
     
     public Thread_Mercure (Socket cClient, HelpSocketVector pHelps)
     {
@@ -154,6 +156,18 @@ public class Thread_Mercure extends Thread
                         requesthelp.setStatus(status);
                         oos.writeObject(requesthelp);
                         oos.flush();
+                        Helplessoos = oos;
+                        break;
+                        
+                    case base_request.I_CAN_HELP:
+                        System.out.println("I_CAN_HELP");
+                        
+                        help_request requesticanhelp = (help_request) request;
+                        requesticanhelp.setType_req(HELP_IS_COMMING);
+                        requesticanhelp.setStatus(true);
+                        requesticanhelp.setId_person_to_help(id); //The ID of the user who will help
+                        Helplessoos.writeObject(requesticanhelp);
+                        Helplessoos.flush();
                         break;
                         
                     case base_request.LOGOUT :

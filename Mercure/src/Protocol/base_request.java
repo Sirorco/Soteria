@@ -23,7 +23,8 @@ public class  base_request implements Serializable, Cloneable
     public static final int HELP_OFFER = 2;             //Used by the client in order to accept or refused giving help
     public static final int I_NEED_HELP = 3;            //A client need help
     public static final int COULD_YOU_HELP = 4;         //Ask if someone could help
-    public static final int I_CAN_HELP = 5;             //When help requesti is accepted
+    public static final int I_CAN_HELP = 5;             //When help request is accepted
+    public static final int HELP_IS_COMMING = 6;        //When help someone is comming to help
     public static final int LOGOUT = 10;                //Used for the client logout
 
 

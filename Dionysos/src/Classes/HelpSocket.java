@@ -12,7 +12,8 @@ import java.net.Socket;
 /**
  *
  * @author Thomas
- * This class represent an element of the HelpSocketVector
+ * This class represent an element of the HelpSocketVector (A person who agree to receive "I need help" notification
+ *
  */
 public class HelpSocket 
 {
