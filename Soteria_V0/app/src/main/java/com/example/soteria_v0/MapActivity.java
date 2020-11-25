@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -131,8 +132,16 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng liege = new LatLng(50.63, 5.57);
-        mMap.addMarker(new MarkerOptions().position(liege).title("FakePerson postion "+person_position));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(liege,mMap.getMaxZoomLevel()));
+        LatLng liege = new LatLng(50.620552, 5.581177);
+        LatLng victime = new LatLng(50.620957, 5.582263);
+        mMap.addMarker(new MarkerOptions()
+                .position(liege)
+                .title("You are here !")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mMap.addMarker(new MarkerOptions()
+                .position(victime)
+                .title("Aurélie")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(liege,17));
     }
 }

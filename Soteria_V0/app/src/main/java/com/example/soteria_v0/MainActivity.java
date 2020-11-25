@@ -24,7 +24,7 @@ import Protocol.login_request;
 
 public class MainActivity extends AppCompatActivity {
 
-    static String IP_SERV = "192.168.1.6";
+    static String IP_SERV = "192.168.1.7";
     static int PORT_BASE = 50001;
     static int PORT_HELP = 50002;
     static Socket cliSock = null;

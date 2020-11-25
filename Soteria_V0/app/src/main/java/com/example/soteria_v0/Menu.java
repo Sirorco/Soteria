@@ -144,8 +144,10 @@ public class Menu extends AppCompatActivity {
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(Menu.this, "needHelp");
                     builder.setSmallIcon(R.drawable.help_icon);
                     builder.setContentTitle(request.getId_person_to_help()+" needs help");
-                    builder.setContentText(request.getId_person_to_help()+" needs you at "+request.getPosition());
-                    builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+                    //builder.setContentText(request.getId_person_to_help()+" needs you at "+request.getPosition());
+                    //builder.setPriority(NotificationCompat.PRIORITY_HIGH);
+                    builder.setContentTitle("Aurélie needs your help !");
+                    builder.setContentText("Aurélie needs your help at 240m");
                     builder.setTimeoutAfter(90000); //la notification se retire après 1m30
                     IDHelpless = request.getId_person_to_help();
 
@@ -217,7 +219,7 @@ public class Menu extends AppCompatActivity {
 
                 request = (help_request)MainActivity.ois.readObject(); //Read the confirmation
                 if(request.getStatus()) {
-                    Log.d (null,"Thomas who is at 270m from you is comming to helkp !" ,null);
+                    Log.d (null,"Coralie who is at 270m from you is comming to helkp !" ,null);
                 }
                 else
                     Log.d (null,"You'd better run fast",null);
@@ -234,7 +236,7 @@ public class Menu extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result)
         {
-            Toast.makeText(getApplicationContext(), "Thomas who is at 270m from you is comming to help !",
+            Toast.makeText(getApplicationContext(), "Coralie who is at 270m from you is comming to help !",
                     Toast.LENGTH_LONG).show();
         }
     }
